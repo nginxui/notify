@@ -41,6 +41,10 @@ func ChatID(s string) *ReceiverID {
 	return &ReceiverID{s, chatID}
 }
 
+func Domain(s string) *ReceiverID {
+	return &ReceiverID{s, domain}
+}
+
 // receiverIDType represents the different ID types implemented by Lark. This
 // information is required when sending a message. More information about the
 // different ID types can be found in the "Query parameters" section of
@@ -55,4 +59,5 @@ const (
 	unionID receiverIDType = "union_id"
 	email   receiverIDType = "email"
 	chatID  receiverIDType = "chat_id"
+	domain  receiverIDType = "domain"
 )

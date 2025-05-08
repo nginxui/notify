@@ -102,6 +102,8 @@ func (l *larkClientGoLarkChatBot) SendTo(subject, message, receiverID, idType st
 		msg.BindEmail(receiverID)
 	case chatID:
 		msg.BindChatID(receiverID)
+	case domain:
+		l.bot.SetDomain(receiverID)
 	}
 	res, err := l.bot.PostMessage(msg.Build())
 	if err != nil {
